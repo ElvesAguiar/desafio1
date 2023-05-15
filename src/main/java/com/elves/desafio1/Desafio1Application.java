@@ -1,5 +1,7 @@
 package com.elves.desafio1;
 
+import com.elves.com.elves.services.OrderService;
+import com.elves.com.elves.services.ShippingService;
 import com.elves.entities.entities.Order;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,5 +20,10 @@ public class Desafio1Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Order order = new Order(1,2.0, (double) 10.0);
 		System.out.println(order);
+		OrderService orderService = new OrderService();
+		System.out.println(orderService.total(order));
+		ShippingService shippingService = new ShippingService();
+		System.out.println(shippingService.shipment(order));
+
 	}
 }
